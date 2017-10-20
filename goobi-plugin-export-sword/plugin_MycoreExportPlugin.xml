@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config_plugin>
+    <exportPath>/opt/digiverso/viewer/hotfolder/</exportPath>
+</config_plugin>

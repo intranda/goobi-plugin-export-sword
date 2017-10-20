@@ -16,6 +16,7 @@ import ugh.exceptions.PreferencesException;
 import ugh.exceptions.ReadException;
 import ugh.exceptions.TypeNotAllowedForParentException;
 import ugh.exceptions.WriteException;
+import de.sub.goobi.config.ConfigPlugins;
 import de.sub.goobi.export.download.ExportMets;
 import de.sub.goobi.helper.exceptions.DAOException;
 import de.sub.goobi.helper.exceptions.ExportFileException;
@@ -29,8 +30,6 @@ public @Data class MycoreExportPlugin extends ExportMets implements IExportPlugi
 
     private static final String PLUGIN_NAME = "plugin_intranda_mycore_export";
 
-    private static final String DESTINATION = "/opt/digiverso/viewer/hotfolder/";
-
     @Override
     public boolean startExport(Process process) throws IOException, InterruptedException, DocStructHasNoTypeException, PreferencesException,
             WriteException, MetadataTypeNotAllowedException, ExportFileException, UghHelperException, ReadException, SwapException, DAOException,
@@ -43,7 +42,8 @@ public @Data class MycoreExportPlugin extends ExportMets implements IExportPlugi
             PreferencesException, WriteException, MetadataTypeNotAllowedException, ExportFileException, UghHelperException, ReadException,
             SwapException, DAOException, TypeNotAllowedForParentException {
         myPrefs = process.getRegelsatz().getPreferences();
-        String metsFileName = DESTINATION + process.getId() + "_mets.xml";
+        destination = ConfigPlugins.getPluginConfig(this).getString("exportPath", "/opt/digiverso/viewer/hotfolder/");
+        String metsFileName = destination + process.getId() + "_mets.xml";
         return writeMetsFile(process, metsFileName, process.readMetadataFile(), false);
     }
 
