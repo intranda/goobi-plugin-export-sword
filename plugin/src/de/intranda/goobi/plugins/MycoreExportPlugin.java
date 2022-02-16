@@ -28,7 +28,7 @@ import ugh.exceptions.WriteException;
 @Data
 public class MycoreExportPlugin extends ExportMets implements IExportPlugin, IPlugin {
 
-    private static final String PLUGIN_NAME = "plugin_intranda_export_sword";
+    private static final String PLUGIN_NAME = "intranda_export_sword";
 
     @Override
     public boolean startExport(Process process) throws IOException, InterruptedException, DocStructHasNoTypeException, PreferencesException,
