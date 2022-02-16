@@ -28,7 +28,7 @@ import ugh.exceptions.WriteException;
 @Data
 public class MycoreExportPlugin extends ExportMets implements IExportPlugin, IPlugin {
 
-    private static final String PLUGIN_NAME = "plugin_intranda_mycore_export";
+    private static final String PLUGIN_NAME = "plugin_intranda_export_sword";
 
     @Override
     public boolean startExport(Process process) throws IOException, InterruptedException, DocStructHasNoTypeException, PreferencesException,
@@ -42,7 +42,7 @@ public class MycoreExportPlugin extends ExportMets implements IExportPlugin, IPl
             PreferencesException, WriteException, MetadataTypeNotAllowedException, ExportFileException, UghHelperException, ReadException,
             SwapException, DAOException, TypeNotAllowedForParentException {
         myPrefs = process.getRegelsatz().getPreferences();
-        destination = ConfigPlugins.getPluginConfig(this).getString("exportPath", "/opt/digiverso/viewer/hotfolder/");
+        destination = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("exportPath", "/opt/digiverso/viewer/hotfolder/");
         String metsFileName = destination + process.getId() + "_mets.xml";
         return writeMetsFile(process, metsFileName, process.readMetadataFile(), false);
     }

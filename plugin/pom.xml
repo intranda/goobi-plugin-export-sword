@@ -4,7 +4,7 @@
   <artifactId>mycore</artifactId>
   <version>1.0.0</version>
   <properties>
-    <jar.name>plugin_intranda_export_mycore</jar.name>
+    <jar.name>plugin_intranda_export_sword</jar.name>
     <dest.folder>/opt/digiverso/goobi/plugins/export/</dest.folder>
     <goobi.version>22.01.1</goobi.version>
   </properties>
