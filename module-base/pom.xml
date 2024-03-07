@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.goobi.workflow.plugin</groupId>
-    <artifactId>plugin-export-mycore</artifactId>
+    <artifactId>plugin-export-sword</artifactId>
     <version>24.03-SNAPSHOT</version>
   </parent>
-  <artifactId>plugin-export-mycore-base</artifactId>
+  <artifactId>plugin-export-sword-base</artifactId>
   <packaging>jar</packaging>
 </project>
